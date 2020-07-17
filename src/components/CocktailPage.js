@@ -21,74 +21,54 @@ const CocktailPage = (props) => {
       <h1>{cocktail.title}</h1>
       <img className="cocktailImg" src={image} />
       <div className="cocktailDetails">
-        <img src={alcohol} />
-        <h5>Alcohol</h5>
-        <h6>{cocktail.alcohol.join(", ")}</h6>
-        <h5>Glassware</h5>
-        <img src={glass} />
-        <h6>{cocktail.drinkware}</h6>
-        <img
-          style={
-            cocktail["standard-garnish"] === undefined
-              ? { display: "none" }
-              : { display: "visible" }
-          }
-          src={garnish}
-        />
-        <h5
-          style={
-            cocktail["standard-garnish"] === undefined
-              ? { display: "none" }
-              : { display: "visible" }
-          }
-        >
-          Garnish
-        </h5>
-        <h6
+        <div className="infographic">
+          <img src={alcohol} />
+          <h5>Alcohol</h5>
+          <h6>{cocktail.alcohol.join(", ")}</h6>
+        </div>
+        <div className="infographic">
+          <img src={glass} />
+          <h5>Glassware</h5>
+          <h6>{cocktail.drinkware}</h6>
+        </div>
+        <div
+          className="infographic"
           style={
             cocktail["standard-garnish"] === undefined
               ? { display: "none" }
               : { display: "visible" }
           }
         >
-          {cocktail["standard-garnish"]}
-        </h6>
-        <img src={type} />
-        <h5>Type</h5>
-        <h6>{cocktail.type}</h6>
-        <img
-          style={
-            cocktail.timing === undefined
-              ? { display: "none" }
-              : { display: "visible" }
-          }
-          src={timing}
-        />
-        <h5
-          style={
-            cocktail.timing === undefined
-              ? { display: "none" }
-              : { display: "visible" }
-          }
-        >
-          Timing
-        </h5>
-        <h6
+          <img src={garnish} />
+          <h5>Garnish</h5>
+          <h6>{cocktail["standard-garnish"]}</h6>
+        </div>
+        <div className="infographic">
+          <img src={type} />
+          <h5>Type</h5>
+          <h6>{cocktail.type}</h6>
+        </div>
+        <div
+          className="infographic"
           style={
             cocktail.timing === undefined
               ? { display: "none" }
               : { display: "visible" }
           }
         >
-          {cocktail.timing}
-        </h6>
+          <img src={timing} />
+          <h5>Timing</h5>
+          <h6>{cocktail.timing}</h6>
+        </div>
       </div>
       <div className="ingredientsAndPrep">
         <h5 className="ingredients">Ingredients</h5>
         <ul className="ingredients">{ingredients}</ul>
         <h5 className="prep">Preparation</h5>
         <p className="prep">{cocktail.preparation}</p>
-        <p className="prep served">{cocktail.served}</p>
+        <p className="prep served" style={{ fontStyle: "italic" }}>
+          {cocktail.served}
+        </p>
       </div>
     </div>
   );

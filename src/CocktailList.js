@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CocktailItem from "./CocktailItem";
 import cocktails from "./cocktails";
 import search from "./search.png";
@@ -12,11 +12,12 @@ const CocktailList = () => {
   const [term, setTerm] = useState("");
   const [cocktailArr, filterCocktailArr] = useState(cocktails);
 
-  const filterCocktailList = (arr) => {
-    let pattern = new RegExp(term, "gi");
-    return cocktails.filter((x) =>
-      x.title.concat(x.ingredients.join(""), x.category).match(pattern)
+  const handleArray = (word) => {
+    let pattern = new RegExp(word, "gi");
+    let filtered = cocktails.filter((c) =>
+      c.title.concat(c.ingredients.join(""), c.category).match(pattern)
     );
+    filterCocktailArr(filtered);
   };
 
   const arrOfCocktails = cocktailArr
@@ -45,23 +46,14 @@ const CocktailList = () => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            filterCocktailArr(filterCocktailList(cocktailArr));
+            handleArray(term);
           }}
         >
           <input type="text" onChange={(e) => setTerm(e.target.value)} />
         </form>
       </div>
       <div className="categoryButtons">
-        <div
-          className="catBlock"
-          onClick={(e) => {
-            e.preventDefault();
-            setTerm("The Unforgettables");
-            let f = filterCocktailList(cocktailArr);
-            filterCocktailArr(f);
-            console.log(f);
-          }}
-        >
+        <div className="catBlock" onClick={() => handleArray("unforgettables")}>
           <div
             className="categories"
             style={{
@@ -74,13 +66,7 @@ const CocktailList = () => {
         </div>
         <div
           className="catBlock"
-          onClick={(e) => {
-            e.preventDefault();
-            setTerm("Contemporary Classics");
-            let f = filterCocktailList(cocktailArr);
-            filterCocktailArr(f);
-            console.log(f);
-          }}
+          onClick={() => handleArray("contemporary classics")}
         >
           <div
             className="categories"
@@ -93,16 +79,7 @@ const CocktailList = () => {
 
           <h5>Contemporary Classics</h5>
         </div>
-        <div
-          className="catBlock"
-          onClick={(e) => {
-            e.stopPropagation();
-            setTerm("New Era");
-            let f = filterCocktailList(cocktailArr);
-            filterCocktailArr(f);
-            console.log(f);
-          }}
-        >
+        <div className="catBlock" onClick={() => handleArray("new era")}>
           <div
             className="categories"
             style={{
