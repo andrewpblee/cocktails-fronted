@@ -3,11 +3,7 @@
 :root {
   font-family: "Assistant", sans-serif;
   background-color: #f2f3f4;
-}
-
-h1 {
-  font-size: 4em;
-  text-align: center;
+  margin: 0;
 }
 
 h2 {
@@ -16,129 +12,14 @@ h2 {
   font-weight: 100;
 }
 
-.wrapper {
-  width: 70vw;
-  max-width: 1500px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
-  grid-gap: 5rem;
-}
-
-.cocktailContainer {
-  text-align: center;
-  vertical-align: middle;
-  width: 70%;
-  margin: 10px auto;
-  text-decoration: none;
-}
-
-.categoryContainer {
-  margin: -20% 40% 0 60%;
-  position: relative;
-  z-index: 1;
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-}
-.categoryLogo {
-  position: absolute;
-  width: 48px;
-  right: 6px;
-  bottom: 0px;
-}
-
-.cocktailImage {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-
-.cocktailPageContainer {
-  width: 40vw;
-  height: 80vh;
-  min-width: 700px;
-  margin: 10vh auto;
+.searchBar {
+  margin: 5vh auto;
   text-align: center;
 }
-.cocktailDetails {
-  text-align: left;
-  width: 100%;
-  display: grid;
-  margin: 3vh auto 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-gap: 20px;
-}
 
-.cocktailDetails > h6 {
-  grid-row-start: 3;
-  text-align: center;
-  margin: 0 auto;
-  max-width: 200px;
-}
-
-.cocktailDetails > h5 {
-  grid-row-start: 2;
-  text-align: center;
-  margin: 0;
-}
-.cocktailDetails > img {
-  grid-row-start: 1;
-  margin: 0 auto;
-  width: 48px;
-}
-
-.ingredientsAndPrep {
-  display: grid;
-  grid-template-columns: 45% 55%;
-  grid-template-rows: 20% 60% 20%;
-  text-align: left;
-  margin: 5% auto;
-  width: 90%;
-}
-
-.ingredients {
-  grid-column-start: 1;
-  padding: 0 20px;
-}
-
-li {
-  list-style: none;
-  padding: 5px;
-}
-
-.prep {
-  grid-column-start: 2;
-  padding: 0 10px;
-}
-
-h5.prep {
-  grid-row-start: 1;
-}
-
-h5.ingredients {
-  grid-row-start: 1;
-}
-
-ul.ingredients {
-  grid-row-start: 2;
-}
-
-p.prep .served {
-  grid-row-start: 3;
-}
-
-.served {
-  font-style: italic;
-}
-
-.cocktailImg {
-  border-radius: 5px;
-}
-
-form {
-  margin: 0 auto;
-  width: 25vw;
+.searchBar > img {
+  margin: 0 5px;
+  width: 18px;
   display: inline-block;
 }
 
@@ -155,23 +36,9 @@ input {
 input:focus {
   outline: none;
 }
-
-.searchBar {
-  margin: 5vh auto;
-  text-align: center;
-}
-
-.searchBar > img {
-  margin: 0 5px;
-  width: 18px;
+form {
+  margin: 0 auto;
   display: inline-block;
-}
-
-.categories > img {
-  position: absolute;
-  width: 48px;
-  right: 6px;
-  bottom: 0px;
 }
 
 .categoryButtons {
@@ -182,19 +49,300 @@ input:focus {
 .catBlock {
   display: inline-block;
   margin: 1vh 20px;
-  width: 120px;
+  width: 60px;
   vertical-align: top;
 }
 
-.catBlock > div {
-  display: inline-block;
+.catBlock > h5 {
+  text-align: center;
+  font-size: 0.6em;
+  margin-top: -1px;
+}
+
+.wrapper {
+  display: grid;
+  margin: 0 auto;
+}
+
+.cocktailContainer {
+  text-align: center;
+  vertical-align: middle;
+  margin: 20px auto;
+  text-decoration: none;
+}
+
+.categoryContainer {
+  margin: -40% 0 0 65%;
   position: relative;
+  z-index: 1;
   height: 60px;
   width: 60px;
   border-radius: 50%;
 }
 
-.catBlock > h5 {
-  text-align: center;
-  margin-top: -2px;
+.cocktailImg {
+  border-radius: 5px;
+}
+
+li {
+  list-style: none;
+  padding: 5px;
+}
+
+/* Mobile Only */
+@media only screen and (max-width: 599px) {
+  li {
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .ingredients {
+    margin: 0 0 40px 0;
+  }
+
+  h5.ingredients,
+  h5.prep {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+
+  .categoryContainer {
+    margin: -40% 0 0 65%;
+    position: relative;
+    z-index: 1;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+  }
+  .cocktailContainer {
+    width: 100%;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2.5em;
+  }
+
+  form {
+    width: 50vw;
+  }
+  .wrapper {
+    width: 90vw;
+    grid-template-columns: 45% 45%;
+    grid-gap: 1rem;
+  }
+
+  .catBlock > div {
+    display: inline-block;
+    position: relative;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+  }
+  .categories > img {
+    position: absolute;
+    width: 32px;
+    right: 6px;
+    bottom: 0px;
+  }
+  .cocktailImage {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+  }
+
+  .categoryLogo {
+    position: absolute;
+    width: 32px;
+    right: 8px;
+    bottom: 0px;
+  }
+
+  .cocktailPageContainer {
+    width: 80vw;
+    margin: 0 auto;
+    margin: 3vh auto;
+    text-align: center;
+  }
+
+  .cocktailDetails {
+    text-align: center;
+    width: 80%;
+    display: grid;
+    margin: 3vh auto 0 auto;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px;
+  }
+
+  .infographic {
+    text-align: center;
+  }
+  .infographic > img {
+    margin: 0 auto;
+    width: 38px;
+  }
+  .infographic > h6 {
+    margin: 0 auto 20px auto;
+    max-width: 100px;
+  }
+
+  .infographic > h5 {
+    margin: 0;
+  }
+}
+
+/* Desktop View */
+@media only screen and (min-width: 600px) {
+  .categoryContainer {
+    margin: -40% 0 0 65%;
+    position: relative;
+    z-index: 1;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+  }
+  .cocktailContainer {
+    width: 70%;
+  }
+
+  h1 {
+    font-size: 4em;
+    text-align: center;
+  }
+
+  .wrapper {
+    width: 70vw;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 2rem;
+  }
+
+  .categoryLogo {
+    position: absolute;
+    width: 48px;
+    right: 6px;
+    bottom: 0px;
+  }
+
+  .cocktailImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  .cocktailPageContainer {
+    width: 30vw;
+    height: 80vh;
+    min-width: 700px;
+    margin: 10vh auto;
+    text-align: center;
+  }
+  .cocktailDetails {
+    text-align: left;
+    width: 100%;
+    display: grid;
+    margin: 3vh auto 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 20px;
+  }
+
+  .infographic {
+    text-align: center;
+  }
+
+  .infographic > h6 {
+    margin: 0 auto;
+    max-width: 200px;
+  }
+
+  .infographic > h5 {
+    margin: 0;
+  }
+  .infographic > img {
+    margin: 0 auto;
+    width: 48px;
+  }
+
+  .ingredientsAndPrep {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 20% 60% 20%;
+    text-align: left;
+    margin: 5% auto;
+    width: 90%;
+  }
+
+  .ingredients {
+    grid-column-start: 1;
+    padding: 0 20px;
+  }
+
+  .prep {
+    grid-column-start: 2;
+    padding: 0 10px;
+  }
+
+  h5.prep {
+    grid-row-start: 1;
+  }
+
+  h5.ingredients {
+    grid-row-start: 1;
+  }
+
+  ul.ingredients {
+    grid-row-start: 2;
+  }
+
+  p.prep .served {
+    grid-row-start: 3;
+  }
+
+  .served {
+    font-style: italic;
+  }
+
+  form {
+    width: 25vw;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .searchBar {
+    margin: 5vh auto;
+    text-align: center;
+  }
+
+  .searchBar > img {
+    margin: 0 5px;
+    width: 18px;
+    display: inline-block;
+  }
+
+  .categories > img {
+    position: absolute;
+    width: 48px;
+    right: 6px;
+    bottom: 0px;
+  }
+
+  .catBlock {
+    display: inline-block;
+    margin: 1vh 20px;
+    width: 120px;
+    vertical-align: top;
+  }
+
+  .catBlock > div {
+    display: inline-block;
+    position: relative;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+  }
+
+  .catBlock > h5 {
+    font-size: 0.8em;
+  }
 }
