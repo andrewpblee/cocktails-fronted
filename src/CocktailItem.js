@@ -9,7 +9,7 @@ const CocktailItem = ({ title, category, image }) => {
   const imageVar = image.match(/.svg.png/, "g") ? placeholder : root + image;
   return (
     <div className="cocktailContainer">
-      <img className="cocktailImage" src={imageVar}></img>
+      <img className="cocktailImage" src={imageVar} alt={title}></img>
       <div
         className="categoryContainer"
         style={
@@ -29,6 +29,7 @@ const CocktailItem = ({ title, category, image }) => {
               ? newEra
               : contemporaries
           }
+          alt="categoryicon"
         ></img>
       </div>
       <h2>{title}</h2>

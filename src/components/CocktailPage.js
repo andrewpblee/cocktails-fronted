@@ -19,7 +19,7 @@ const CocktailPage = (props) => {
   return (
     <div className="cocktailPageContainer">
       <h1>{cocktail.title}</h1>
-      <img className="cocktailImg" src={image} />
+      <img className="cocktailImg" src={image} alt={cocktail.title} />
       <div className="cocktailDetails">
         <div className="infographic">
           <img src={alcohol} />
@@ -27,7 +27,7 @@ const CocktailPage = (props) => {
           <h6>{cocktail.alcohol.join(", ")}</h6>
         </div>
         <div className="infographic">
-          <img src={glass} />
+          <img src={glass} alt="glass" />
           <h5>Glassware</h5>
           <h6>{cocktail.drinkware}</h6>
         </div>
@@ -39,12 +39,12 @@ const CocktailPage = (props) => {
               : { display: "visible" }
           }
         >
-          <img src={garnish} />
+          <img src={garnish} alt="garnish" />
           <h5>Garnish</h5>
           <h6>{cocktail["standard-garnish"]}</h6>
         </div>
         <div className="infographic">
-          <img src={type} />
+          <img src={type} alt="type" />
           <h5>Type</h5>
           <h6>{cocktail.type}</h6>
         </div>
@@ -56,7 +56,7 @@ const CocktailPage = (props) => {
               : { display: "visible" }
           }
         >
-          <img src={timing} />
+          <img src={timing} alt="timing" />
           <h5>Timing</h5>
           <h6>{cocktail.timing}</h6>
         </div>

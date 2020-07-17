@@ -42,7 +42,7 @@ const CocktailList = () => {
     <>
       <h1>The Cocktail Compendium</h1>
       <div className="searchBar">
-        <img src={search} />
+        <img src={search} alt="searchicon" />
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -60,7 +60,7 @@ const CocktailList = () => {
               backgroundColor: "#CBEEF3",
             }}
           >
-            <img src={unforgettable}></img>
+            <img src={unforgettable} alt="categoryicon"></img>
           </div>
           <h5>The Unforgettables</h5>
         </div>
@@ -74,7 +74,7 @@ const CocktailList = () => {
               backgroundColor: "#FFF5AD",
             }}
           >
-            <img src={contemporaries}></img>
+            <img src={contemporaries} alt="categoryicon"></img>
           </div>
 
           <h5>Contemporary Classics</h5>
@@ -86,7 +86,7 @@ const CocktailList = () => {
               backgroundColor: "#F6BDD1",
             }}
           >
-            <img src={newEra}></img>
+            <img src={newEra} alt="categoryicon"></img>
           </div>
           <h5>New Era</h5>
         </div>
