@@ -16,7 +16,6 @@ const CocktailPage = (props) => {
     ? placeholder
     : "https:" + cocktail.image;
   const ingredients = cocktail.ingredients.map((i) => <li>{i}</li>);
-  console.log(cocktail);
   return (
     <div className="cocktailPageContainer">
       <h1>{cocktail.title}</h1>

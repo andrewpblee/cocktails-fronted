@@ -136,13 +136,10 @@ p.prep .served {
   border-radius: 5px;
 }
 
-.searchbar:focus {
-  outline: none;
-}
-
 form {
-  margin: 3vh auto;
+  margin: 0 auto;
   width: 25vw;
+  display: inline-block;
 }
 
 input {
@@ -157,4 +154,47 @@ input {
 
 input:focus {
   outline: none;
+}
+
+.searchBar {
+  margin: 5vh auto;
+  text-align: center;
+}
+
+.searchBar > img {
+  margin: 0 5px;
+  width: 18px;
+  display: inline-block;
+}
+
+.categories > img {
+  position: absolute;
+  width: 48px;
+  right: 6px;
+  bottom: 0px;
+}
+
+.categoryButtons {
+  margin: 3vh auto;
+  text-align: center;
+}
+
+.catBlock {
+  display: inline-block;
+  margin: 1vh 20px;
+  width: 120px;
+  vertical-align: top;
+}
+
+.catBlock > div {
+  display: inline-block;
+  position: relative;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.catBlock > h5 {
+  text-align: center;
+  margin-top: -2px;
 }
