@@ -15,7 +15,9 @@ const CocktailPage = (props) => {
   const image = cocktail.image.match(/svg.png/, "g")
     ? placeholder
     : "https:" + cocktail.image;
-  const ingredients = cocktail.ingredients.map((i) => <li>{i}</li>);
+  const ingredients = cocktail.ingredients.map((ingredient, index) => (
+    <li key={index}>{ingredient}</li>
+  ));
   return (
     <div className="cocktailPageContainer">
       <h1>{cocktail.title}</h1>
