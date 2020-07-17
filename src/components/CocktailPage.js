@@ -22,7 +22,7 @@ const CocktailPage = (props) => {
       <img className="cocktailImg" src={image} alt={cocktail.title} />
       <div className="cocktailDetails">
         <div className="infographic">
-          <img src={alcohol} />
+          <img src={alcohol} alt="alcohol" />
           <h5>Alcohol</h5>
           <h6>{cocktail.alcohol.join(", ")}</h6>
         </div>
