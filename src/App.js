@@ -1,6 +1,6 @@
 import React from "react";
 import CocktailList from "./CocktailList";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import CocktailPage from "./components/CocktailPage";
 
 const App = () => {
